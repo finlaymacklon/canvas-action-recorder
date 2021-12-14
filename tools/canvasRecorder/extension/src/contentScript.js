@@ -22,6 +22,17 @@ const listener = (request, sender, sendResponse) => {
   return true;
 };
 
+// Listen for messages from popup about changes to HTMLCanvasElement
+const popuplistener = (request, sender, sendResponse) => {
+  // just logging for now... not doing anything...
+  console.log(sender.tab, request.type, request.payload);
+
+  // Send an empty response
+  // See https://github.com/mozilla/webextension-polyfill/issues/130#issuecomment-531531890
+  sendResponse({});
+  return true;
+};
+
 // Send messages to background and popup when clicks occur on canvas
 const sendCoordinates = (e) => { 
   // Communicate with background file by sending a message
@@ -63,29 +74,23 @@ const getCanvas = (canvasId="") => {
   return canvas;
 }
 
-// const clearStorage = () => {
-//   // Tell service worker to clear some storage on reload
-//   chrome.runtime.sendMessage(
-//     {
-//       type: 'CLEARDATA',
-//       payload: {
-//         targetId: e.target.id,
-//         x: e.offsetX,
-//         y: e.offsetY
-//       },
-//     },
-//     response => {
-//       console.log('Canvas Recorder', '-', response.message);
-//     }
-//   );
-// }
+const startWatching = (canvasId) => {
+  // grab <canvas> specified in popup
+  const canvas = getCanvas(canvasId);
+  // set event listener on canvas to send coordinates
+  canvas.addEventListener('click', sendCoordinates);
+}
+
+const stopWatching = (canvasId) => {
+  // grab <canvas> specified in popup
+  const canvas = getCanvas(canvasId);
+  // detach event listener on canvas for sending coordinates
+  canvas.removeEventListener('click', sendCoordinates);
+}
+
 
 // Run the content script to start tracking actions on <canvas>
 (() => {
-  // grab <canvas> specified in popup
-  const canvas = getCanvas("");
-  // set event listener on canvas to send coordinates
-  canvas.addEventListener('click', sendCoordinates);
   // listen to messages from popup and service worker
   chrome.runtime.onMessage.addListener(listener);
 })();

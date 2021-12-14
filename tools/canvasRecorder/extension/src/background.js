@@ -57,17 +57,16 @@ const getDataListener = (request, sender, sendResponse) => {
 
 const clearDataListener = (request, sender, sendResponse) => {
   if (request.type === "CLEARDATA") {
-      console.log(request)
       const tabId = request.payload.tabId;
       const canvasId = request.payload.canvasId;
       const key = request.payload.key;
 
       clearCanvasRecorderData(tabId, canvasId, key);
 
-      const message = "";
+      const success = 1;
       // Send a response message
       sendResponse({
-        message,
+        success,
       });
   }
   return true;
@@ -92,7 +91,6 @@ const pushCoordinates = (tabId, canvasId, x, y) => {
   const coords = [x,y];
   getCanvasRecorderData(tabId, canvasId, key, (result) => {
     let coordinatesList = result[slotName(tabId, canvasId, key)];
-    console.log(coordinatesList);
     if (!coordinatesList) {
       coordinatesList = [coords];
     } else {

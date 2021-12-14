@@ -15,11 +15,7 @@ html {
 
 body {
     width: 350px;
-    height: 300px;
-}
-
-input {
-    margin-top: 5px;
+    height: 350px;
 }
 
 .app {
@@ -42,14 +38,51 @@ input {
     font-size: 12px;
 }
 
-code {
+.divider {
+    margin: 7px auto 5px;
+    width: 50px;
+    border: .5px dashed #000;
+    opacity: .1;
+}
+
+.optionsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.option {
+    padding: 4px;
+    text-align: left;
+}
+
+/* code {
     font-size: 12px;
     font-family: inherit;
     background-color: rgba(254, 237, 185, .3);
     padding: 2px 4px;
     border-radius: 2px;
     white-space: pre-wrap;
+} */
+
+#coordinates {
+    white-space: normal;
+    word-break: break-word;
+    overflow-y: scroll;
+    height: 75px;
+    max-height: 75px;
+    width: 300px;
+    max-width: 300px;
+    display: block;
+    cursor: pointer;
+    transition: transform .2s ease;
+    background-color: rgba(254, 237, 185, .3);
+    padding: 2px;
 }
+
+#coordinates:hover {
+    transform: scale(1.05);
+}
+
 
 .button-container {
     margin-top: 15px;
@@ -76,27 +109,4 @@ button:focus {
 
 button:hover {
     transform: scale(1.05);
-}
-
-.divider {
-    margin: 30px auto 25px;
-    width: 50px;
-    border: .5px dashed #000;
-    opacity: .1;
-}
-
-#coordinates {
-    white-space: normal;
-    word-break: break-word;
-    overflow-y: scroll;
-    height: 50px;
-    max-height: 50px;
-    width: 300px;
-    max-width: 300px;
-    display: block;
-    cursor: pointer;
-}
-
-#coordinates:hover {
-    transform: scale(1.1);
 }
