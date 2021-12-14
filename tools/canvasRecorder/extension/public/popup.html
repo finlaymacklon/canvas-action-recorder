@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Recorder</title>
+    <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <h1 class="title">Canvas Recorder</h1>
+    <div class="section">
+      <h3 class="subtitle">Click Coordinates</h3>
+      <div id="options">
+        <label for="canvasId">HTMLCanvasElement ID</label>
+        <input id="canvasId" value="">
+        <br>
+        <!--  -->
+        <label for="outputFormat">Output Format</label>
+        <input id="outputFormat" value="x, y">
+        <br>
+        <!--  -->
+        <label for="defaultWidth">Default Width</label>
+        <input id="defaultWidth" value="1920">px
+        <br>
+        <!--  -->
+        <label for="defaultHeight">Default Height</label>
+        <input id="defaultHeight" value="1080">px
+      </div>
+      <div class="button-container" title="Click to copy coordinates.">
+        <center>
+          <code id="coordinates"></code>
+        </center>  
+      </div>
+      <!--  -->
+      <div class="button-container">
+        <button id="clearButton">Clear Coordinates</button>
+      </div>
+    </div>
+
+    <!-- <hr class="divider" /> -->
+    <br>
+    <p class="subtitle">v0.1.0</p>
+  </div>
+
+  <script src="popup.js"></script>
+
+  <!--
+    This HTML file opens when you click on icon from the toolbar.
+
+    To begin the development, run `npm run watch`.
+    To create a production bundle, use `npm run build`.
+  -->
+</body>
+</html>
