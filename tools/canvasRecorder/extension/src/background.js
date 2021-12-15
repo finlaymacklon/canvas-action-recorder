@@ -19,26 +19,26 @@ const setCanvasRecorderData = (tabId, canvasId, key, value) => {
     console.log(`Stored ${slot}.`);
   }); 
 }
-
+//
 const getCanvasRecorderData = (tabId, canvasId, key, callback) => {
   const slot = slotName(tabId, canvasId, key);
   chrome.storage.local.get([slot], (result) => {
-    console.log(`Retrieved ${slot}`);
+    console.log(`Retrieved ${slot}.`);
     callback(result);
   });
 }
-
+//
 const clearCanvasRecorderData = (tabId, canvasId, key) => {
   const slot = slotName(tabId, canvasId, key);
   chrome.storage.local.remove([slot], () => {
     console.log(`Cleared ${slot}`);
   });
 }
-
+//
 const slotName = (tabId, canvasId, key) => {
   return `${tabId}_${canvasId}_${key}`;
 }
-
+//
 const getDataListener = (request, sender, sendResponse) => {
   if (request.type === "GETDATA") {
       const tabId = request.payload.tabId;
@@ -54,7 +54,7 @@ const getDataListener = (request, sender, sendResponse) => {
   }
   return true;
 }
-
+//
 const clearDataListener = (request, sender, sendResponse) => {
   if (request.type === "CLEARDATA") {
       const tabId = request.payload.tabId;
