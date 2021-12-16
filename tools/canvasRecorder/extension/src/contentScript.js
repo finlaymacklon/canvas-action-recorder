@@ -33,7 +33,7 @@ const stopWatchListener = (request, sender, sendResponse) => {
 const dimensionsListener = (request, sender, sendResponse) => {
   if (request.type === "GETDIMS") {
     const canvas = getCanvas(request.payload.canvasId);
-    const message = {'w': canvas.width, 'h': canvas.height};
+    const message = {'w': canvas.offsetWidth, 'h': canvas.offsetHeight};
     sendResponse({ message });
   }
   return true;

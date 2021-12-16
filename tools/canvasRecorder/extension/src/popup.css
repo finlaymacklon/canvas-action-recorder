@@ -111,3 +111,7 @@ button:focus {
 button:hover {
     transform: scale(1.05);
 }
+
+#toggleRecord {
+    background-color: lightgrey;
+}

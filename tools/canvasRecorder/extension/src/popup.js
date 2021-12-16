@@ -127,7 +127,7 @@ const slotName = (key) => {
 }
 const loadRecordingState = (response) => {
   const startTxt = "Start Recording";
-  const startColor = "grey";
+  const startColor = "lightgrey";
   const stopTxt = "Stop Recording";
   const stopColor = "red";
   const recordButton = document.getElementById("toggleRecord");
