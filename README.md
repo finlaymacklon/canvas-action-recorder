@@ -12,7 +12,7 @@
 2. `cd` to cloned repository
 3. `npm install`
 4. `npm run build`
-5. Chrome -> Extensions -> Manage Extensions -> Load unpacked
+5. Chrome Menu -> More Tools -> Extensions -> Toggle on `Developer mode` -> Load unpacked
 6. Select the `build` folder (NOT the root folder - this will not work)
 
 ## Contribution
