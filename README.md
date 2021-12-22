@@ -8,7 +8,10 @@
 
 ## Install
 
-[**Chrome** extension]()
+1. Clone the repository
+2. `cd` to cloned repository and `npm run build`
+3. Chrome -> Extensions -> Manage Extensions -> Load unpacked
+4. Select the `build` folder (NOT the root folder - this will not work)
 
 ## Contribution
 
