@@ -65,14 +65,18 @@ body {
     white-space: pre-wrap;
 } */
 
+#canvasRecorderButtonContainer.option {
+    text-align: center;
+}
+
 #coordinates {
     white-space: normal;
     word-break: break-word;
     overflow-y: scroll;
     height: 75px;
     max-height: 75px;
-    width: 300px;
-    max-width: 300px;
+    width: 310px;
+    max-width: 310px;
     display: block;
     cursor: pointer;
     transition: transform .2s ease;

@@ -27,22 +27,22 @@
           <label for="defaultHeight">Default Height (px)</label>
           <input type="number" id="defaultHeight" value="720">
         </div>
-        <div class="option">
-          <label for="scaleCoords">Scale Coordinates</label>
-          <input type="checkbox" id="scaleCoords">
-        </div>
-        <div class="option">
-          <button id="toggleRecord">Start Recording</button>
-        </div>
       </div>
       <div class="button-container" title="Click to copy coordinates.">
         <center>
           <pre id="coordinates"></pre>
         </center>  
       </div>
+      <div class="option">
+        <label for="scaleCoords">Scale Coordinates</label>
+        <input type="checkbox" id="scaleCoords">
+      </div>
       <!--  -->
       <div class="button-container">
-        <button id="clearButton">Clear Coordinates</button>
+        <div class="option" id="canvasRecorderButtonContainer">
+          <button id="toggleRecord">Start Recording</button>
+          <button id="clearButton">Clear Coordinates</button>
+        </div>
       </div>
     </div>
     <!-- <hr class="divider" /> -->
