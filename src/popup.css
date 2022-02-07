@@ -80,14 +80,35 @@ body {
     display: block;
     cursor: pointer;
     transition: transform .2s ease;
-    background-color: rgba(254, 237, 185, .3);
+    background-color: #EAFAFF;
     padding: 2px;
+    outline: 1px solid #000;    /* ensures no overlap with scrollbar thumb bg clr vs border css prop */
+    border-radius: 4px;
 }
 
 #coordinates:hover {
     transform: scale(1.05);
 }
 
+/* Works on Chrome, Edge, and Safari (not Firefox): https://www.digitalocean.com/community/tutorials/css-scrollbars */
+#coordinates::-webkit-scrollbar{
+    width: 16px;
+}
+  
+#coordinates::-webkit-scrollbar-thumb{
+    /* first 4 values ensure no minor pixel leaks with bg clr */
+    box-shadow:
+        inset -1px 0 0 1px #EAFAFF,
+        inset 1px 0 0 1px #EAFAFF,
+        inset 0 -1px 0 1px #EAFAFF,
+        inset 0 1px 0 1px #EAFAFF,
+        inset 0 0 0 5px #EAFAFF;
+    border: 1px solid #EAFAFF;  /* ensures no minor pixel leaks with bg clr */
+    border-radius: 15px;
+    outline: 1px solid #7BDFFF;
+    outline-offset: -6px;
+    background-color: #C8F2FF;
+}
 
 .button-container {
     margin-top: 15px;
