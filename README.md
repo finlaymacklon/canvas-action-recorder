@@ -1,4 +1,6 @@
-# <img src="public/icons/icon_48.png" width="40" align="left"> HTML5 &lt;canvas&gt; Recorder
+# Record actions on the HTML Canvas element
+
+This repository contains the files for a Chrome browser extension that can record actions on an HTML Canvas element. Currently only supports recording of mouse clicks.
 
 ## Features
 
@@ -10,7 +12,7 @@
 
 1. Clone the repository
 2. `cd` to cloned repository
-3. `npm install`
+3. `npm i -D`
 4. `npm run build`
 5. Chrome Menu -> More Tools -> Extensions -> Toggle on `Developer mode` -> Load unpacked
 6. Select the `build` folder (NOT the root folder - this will not work)
@@ -18,6 +20,10 @@
 ## Contribution
 
 Suggestions and pull requests are welcomed!.
+
+## Example
+
+![Example of the browser extension in-use.](img/example.png "Example")
 
 ---
 
