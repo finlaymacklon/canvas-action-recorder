@@ -23,7 +23,7 @@ Suggestions and pull requests are welcomed!.
 
 ## Example
 
-![Example of the browser extension in-use.](img/example.png "Example")
+![Example of the browser extension when in-use.](img/example.png "Example of the browser extension when in-use.")
 
 ---
 
