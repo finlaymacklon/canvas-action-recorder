@@ -21,6 +21,12 @@ This repository contains the files for a Chrome browser extension that can recor
 
 Suggestions and pull requests are welcomed!.
 
+## Contributors
+
+The following GitHub users have contributed to this repository:
+- [finlaymacklon](https://github.com/finlaymacklon)
+- [alissa-nonato](https://github.com/alissa-nonato)
+
 ## Example
 
 ![Example of the browser extension when in-use.](img/example.png "Example of the browser extension when in-use.")
